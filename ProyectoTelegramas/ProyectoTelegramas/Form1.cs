@@ -7,22 +7,25 @@ namespace ProyectoTelegramas
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCalcularPrecio_Click(object sender, EventArgs e)
         {
             string textoTelegrama;
-            char tipoTelegrama = ' ';
+            char tipoTelegrama = 'o';
             int numPalabras = 0;
             double coste;
-            //Leo el telegrama
+
+            //Leo el telegrama  
             textoTelegrama = txtTelegrama.Text;
-            // telegrama urgente?
+            // telegrama urgente? 
             if (chkUrgente.Checked)
             {
                 tipoTelegrama = 'u';
             }
-            //Obtengo el número de palabras que forma el telegrama
-            numPalabras = textoTelegrama.Length;
-            //Si el telegrama es ordinario
+            //Obtengo el número de palabras que forma el telegrama  
+            string[] palabras = textoTelegrama.Split(' '); //separa las palabras y las introduce en una estructura
+            numPalabras = palabras.Length; //Obtiene la longitud de la estructura, que será el número de palabras
+
+            //Si el telegrama es ordinario 
             if (tipoTelegrama == 'o')
             {
                 if (numPalabras <= 10)
@@ -31,11 +34,11 @@ namespace ProyectoTelegramas
                 }
                 else
                 {
-                    coste = 0.5 * numPalabras;
+                    coste = 2.50 + 0.5 * (numPalabras - 10);
                 }
             }
             else
-            //Si el telegrama es urgente
+            //Si el telegrama es urgente 
             {
                 if (tipoTelegrama == 'u')
                 {
@@ -55,8 +58,6 @@ namespace ProyectoTelegramas
             }
             txtPrecio.Text = coste.ToString() + " euros";
         }
-
-
     }
 }
 
