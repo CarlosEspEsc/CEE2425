@@ -30,63 +30,48 @@
         {
             txtTelegrama = new TextBox();
             Calcular = new Button();
-            chkUrgente = new CheckBox();
             txtPrecio = new TextBox();
             label1 = new Label();
             label2 = new Label();
+            Ordinario = new RadioButton();
+            radioButton2 = new RadioButton();
             SuspendLayout();
             // 
             // txtTelegrama
             // 
-            txtTelegrama.Location = new Point(73, 57);
-            txtTelegrama.Margin = new Padding(3, 4, 3, 4);
+            txtTelegrama.Location = new Point(29, 50);
             txtTelegrama.Multiline = true;
             txtTelegrama.Name = "txtTelegrama";
-            txtTelegrama.Size = new Size(763, 276);
+            txtTelegrama.Size = new Size(668, 208);
             txtTelegrama.TabIndex = 0;
             // 
             // Calcular
             // 
             Calcular.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Calcular.Location = new Point(601, 388);
-            Calcular.Margin = new Padding(3, 4, 3, 4);
+            Calcular.Location = new Point(491, 285);
             Calcular.Name = "Calcular";
-            Calcular.Size = new Size(235, 93);
+            Calcular.Size = new Size(206, 91);
             Calcular.TabIndex = 1;
             Calcular.Text = "Calcular";
             Calcular.UseVisualStyleBackColor = true;
             Calcular.Click += btnCalcularPrecio_Click;
             // 
-            // chkUrgente
-            // 
-            chkUrgente.AutoSize = true;
-            chkUrgente.Font = new Font("Segoe UI", 15F);
-            chkUrgente.Location = new Point(73, 375);
-            chkUrgente.Margin = new Padding(3, 4, 3, 4);
-            chkUrgente.MaximumSize = new Size(300, 200);
-            chkUrgente.MinimumSize = new Size(150, 50);
-            chkUrgente.Name = "chkUrgente";
-            chkUrgente.Size = new Size(150, 50);
-            chkUrgente.TabIndex = 2;
-            chkUrgente.Text = "Urgente?";
-            chkUrgente.UseVisualStyleBackColor = true;
-            // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(203, 446);
+            txtPrecio.Location = new Point(118, 334);
+            txtPrecio.Margin = new Padding(3, 2, 3, 2);
             txtPrecio.Multiline = true;
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(168, 54);
+            txtPrecio.Size = new Size(148, 42);
             txtPrecio.TabIndex = 3;
-            //txtPrecio.TextChanged += textBox2_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label1.Location = new Point(73, 25);
+            label1.Location = new Point(29, 9);
             label1.Name = "label1";
-            label1.Size = new Size(81, 35);
+            label1.Size = new Size(64, 28);
             label1.TabIndex = 4;
             label1.Text = "Texto";
             // 
@@ -94,26 +79,51 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label2.Location = new Point(93, 446);
+            label2.Location = new Point(24, 334);
             label2.Name = "label2";
-            label2.Size = new Size(88, 35);
+            label2.Size = new Size(69, 28);
             label2.TabIndex = 5;
             label2.Text = "Coste:";
             // 
+            // Ordinario
+            // 
+            Ordinario.AutoSize = true;
+            Ordinario.Location = new Point(29, 285);
+            Ordinario.Name = "Ordinario";
+            Ordinario.Size = new Size(75, 19);
+            Ordinario.TabIndex = 6;
+            Ordinario.TabStop = true;
+            Ordinario.Text = "Ordinario";
+            Ordinario.UseVisualStyleBackColor = true;
+            Ordinario.CheckedChanged += Ordinario_CheckedChanged;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(148, 285);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(67, 19);
+            radioButton2.TabIndex = 7;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Urgente";
+            radioButton2.UseVisualStyleBackColor = true;
+            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(727, 409);
+            Controls.Add(radioButton2);
+            Controls.Add(Ordinario);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtPrecio);
-            Controls.Add(chkUrgente);
             Controls.Add(Calcular);
             Controls.Add(txtTelegrama);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -122,10 +132,11 @@
 
         private TextBox txtTelegrama;
         private Button Calcular;
-        private CheckBox chkUrgente;
         private TextBox txtPrecio;
         private Label label1;
         private Label label2;
         private readonly EventHandler textBox2_TextChanged;
+        private RadioButton Ordinario;
+        private RadioButton radioButton2;
     }
 }
