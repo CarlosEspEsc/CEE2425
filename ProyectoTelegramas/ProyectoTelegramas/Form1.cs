@@ -24,22 +24,22 @@ namespace ProyectoTelegramas
             {
                 if (numPalabras <= 10)
                 {
-                    coste = 2.5;
+                    coste = 3.0;
                 }
                 else
                 {
-                    coste = 2.50 + 0.5 * (numPalabras - 10);
+                    coste = 3.0 + 0.5 * (numPalabras - 10);
                 }
             }
             else
             {
                 if (numPalabras <= 10)
                 {
-                    coste = 5;
+                    coste = 6.0;
                 }
                 else
                 {
-                    coste = 5 + 0.75 * (numPalabras - 10);
+                    coste = 6.0 + 0.75 * (numPalabras - 10);
                 }
             }
             txtPrecio.Text = coste.ToString() + " euros";
